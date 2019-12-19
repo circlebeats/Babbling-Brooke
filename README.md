@@ -6,16 +6,15 @@
 ### API
 #### Get all Beats
 ```javascript
-  fastify.get('/beatsFull', async (request,reply)=>{
-    await connection.query('SELECT fid, title, producer, plays, bpm, userTag1, userTag2, filterTag1, filterTag2, url,genre FROM trakz', function (error, results, fields) {
-      if (error) {
-        console.log(error)
-      }else {
-        console.log(results)
-        reply.send(results, fields)
-        //connection.end();
-      }
-    });
+  fastify.get('/beats/:name', async (request,reply)=>{
+    const pathLink = path.join(__dirname,'..','storage','mp3',`${request.params.name}.mp3`)
+    //const stream = fs.createReadStream(pathLink, 'base64')
+    fs.readFile(pathLink, function(err,fileBuffer) {
+      console.log(fileBuffer)
+      reply.header('Content-Type','audio/mpeg')
+        .send(fileBuffer)
+        .code(200)
+    })
   })
 ```
 
