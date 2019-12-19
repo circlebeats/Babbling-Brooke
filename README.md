@@ -2,7 +2,7 @@
 # Babbling Brooke
 ## Official circlebeats.com  Aduio Streaming Server
 ```
-git  clone https://github.com/circlebeats/Babbling-Brooke.git
+git  clone https://github.com/circlebeats/Babbling-Brooke.git && cd Babbling-Brooke
 npm install && npm start
 ```
 
