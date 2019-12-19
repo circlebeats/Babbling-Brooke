@@ -7,7 +7,7 @@
 #### Get all Beats
 ```javascript
   fastify.get('/beats/:name', async (request,reply)=>{
-    const pathLink = path.join(__dirname,'..','storage','mp3',`${request.params.name}.mp3`)
+    const pathLink = path.join('/*add your servers url here*/',__dirname,'..','storage','mp3',`${request.params.name}.mp3`)
     //const stream = fs.createReadStream(pathLink, 'base64')
     fs.readFile(pathLink, function(err,fileBuffer) {
       console.log(fileBuffer)
