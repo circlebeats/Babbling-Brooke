@@ -3,8 +3,16 @@
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
 
+
+
 module.exports = function (fastify, opts, next) {
   // Place here your custom code!
+  //"FASTIFY-CORS" IMPORT AND REGISTER
+  fastify.register(require('fastify-cors'), {
+    // put your options here
+    origin:  true,
+    methods: ['GET,PUT,POST']
+  })
 
   // "FASTIFY-MULTIPART" IMPORT AND REGISTER
   fastify.register(require('fastify-multipart'))
