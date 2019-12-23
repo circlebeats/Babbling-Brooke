@@ -4,7 +4,7 @@ const fs = require('fs')
 
 module.exports = async function (fastify) {
   fastify.get('/beats/:name', async function (request,reply) {
-    const pathLink = path.join(__dirname,'..','storage','mp3',`${request.params.name}.mp3`)
+    const pathLink = path.join(__dirname,'..','..','storage','mp3',`${request.params.name}.mp3`)
     fs.readFile(pathLink, function(err,fileBuffer) {
       //console.log(fileBuffer)
       if (err){
