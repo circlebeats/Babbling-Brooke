@@ -9,7 +9,7 @@
   "scripts": {
     "test": "tap test/**/*.test.js",
     "start": "fastify start -l info app.js",
-    "dev": "fastify start -l info app.js  -p 3001"
+    "dev": "fastify start -l info app.js -w -p 3001"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +22,14 @@
     "fastify-multipart": "^1.0.3",
     "fastify-plugin": "^1.5.0",
     "fastify-redis": "^3.1.1",
+    "fastify-websocket": "^1.1.0",
     "fs": "0.0.1-security",
     "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
     "path": "^0.12.7",
-    "pump": "^3.0.0"
+    "pump": "^3.0.0",
+    "shortid": "^2.2.15",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "tap": "^12.5.3"
